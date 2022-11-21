@@ -1,0 +1,89 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Movie 1",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolores pariatur vero ipsam ipsum fuga ullam ex consequatur, quia dignissimos dolore at soluta aperiam adipisci, laborum et nostrum iusto maxime?",
+      "image": "1.jpeg",
+      "isPopular": 0,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "Movie 2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolores pariatur vero ipsam ipsum fuga ullam ex consequatur, quia dignissimos dolore at soluta aperiam adipisci, laborum et nostrum iusto maxime?",
+      "image": "2.jpeg",
+      "isPopular": 1,
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "title": "movie 3",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolores pariatur vero ipsam ipsum fuga ullam ex consequatur, quia dignissimos dolore at soluta aperiam adipisci, laborum et nostrum iusto maxime?",
+      "image": "3.jpeg",
+      "isPopular": 0,
+      "categoryId": 3
+    },
+    {
+      "id": 4,
+      "title": "movie 4",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolores pariatur vero ipsam ipsum fuga ullam ex consequatur, quia dignissimos dolore at soluta aperiam adipisci, laborum et nostrum iusto maxime?",
+      "image": "4.jpeg",
+      "isPopular": 1,
+      "categoryId": 4
+    },
+    {
+      "id": 5,
+      "title": "movie 5",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, dolores pariatur vero ipsam ipsum fuga ullam ex consequatur, quia dignissimos dolore at soluta aperiam adipisci, laborum et nostrum iusto maxime?",
+      "image": "4.jpeg",
+      "isPopular": 1,
+      "categoryId": 1
+    },
+    {
+      "id": 9,
+      "title": "test3",
+      "description": "tests",
+      "image": "test_image.jpg",
+      "category": "1",
+      "isPopular": false,
+      "datePublished": 1656958713790
+    },
+    {
+      "id": 10,
+      "title": "tr",
+      "description": "tete",
+      "image": "tet.png",
+      "category": "1",
+      "isPopular": false,
+      "datePublished": 1656958849136
+    },
+    {
+      "id": 11,
+      "title": "test",
+      "description": "test",
+      "image": "etw.png",
+      "category": "2",
+      "isPopular": false,
+      "datePublished": 1656958990042
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Action"
+    },
+    {
+      "id": 2,
+      "name": "Adventure"
+    },
+    {
+      "id": 3,
+      "name": "Fantastic"
+    },
+    {
+      "id": 4,
+      "name": "Western"
+    }
+  ]
+}

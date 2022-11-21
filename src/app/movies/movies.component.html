@@ -1,0 +1,53 @@
+<app-loading [loading]="loading"></app-loading>
+<app-alert *ngIf="error" [message]="error" close="closeDialog()"></app-alert>
+
+<div *ngIf="!loading">
+  <div *ngIf="movies.length > 0; else noMovies">
+    <h1>{{ title }}</h1>
+    <div class="alert alert-success">
+      {{ filteredMovies.length }} Movies found.
+    </div>
+    <div class="mb-3">
+      <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search Movie..."
+        (ngModelChange)="onInputChange()" />
+      <small class="text-muted" *ngIf="searchText">Search text: {{ searchText }}</small>
+    </div>
+    <ng-template [ngTemplateOutlet]="movieList"></ng-template>
+  </div>
+</div>
+
+<ng-template #noMovies>
+  <div class="alert alert-warning">Movie not found</div>
+</ng-template>
+
+<ng-template #movieList>
+  <div class="card mb-3" *ngFor="let movie of filteredMovies">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="assets/img/{{ movie.image }}" class="img-fluid rounded-start" alt="" />
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <h2 class="card-title">{{ movie.title | uppercase }}</h2>
+          <p class="card-text">
+            {{ movie.description }}
+          </p>
+          <!-- <p class="card-text">{{ movie.datePublished | date: "dd/MM/y" }}</p> -->
+          <div>
+            <button routerLink="/movies/{{ movie.id }}" class="btn btn-sm btn-outline-primary me-2">
+              Details
+            </button>
+            <div *ngIf="userId">
+              <button *ngIf="!getButtonsState(movie)" (click)="addToList($event, movie)" class="btn btn-sm btn-primary">
+                Add to List
+              </button>
+              <button *ngIf="getButtonsState(movie)" (click)="addToList($event, movie)" class="btn btn-sm btn-danger">
+                Remove to List
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

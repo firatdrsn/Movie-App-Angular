@@ -1,0 +1,77 @@
+<h1>Create Movie</h1>
+<form [formGroup]="movieForm" (ngSubmit)="addMovie()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      formControlName="title"
+    />
+    <div *ngIf="title.invalid && title.touched">
+      <p class="alert alert-danger" *ngIf="title.errors['required']">
+        Required field
+      </p>
+      <p class="alert alert-danger" *ngIf="title.errors['minlength']">
+        Title must be at least 2 characters long
+      </p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      name="description"
+      class="form-control"
+      formControlName="description"
+    ></textarea>
+    <div *ngIf="description.invalid && description.touched">
+      <p class="alert alert-danger" *ngIf="imageUrl.errors['required']">
+        Required field
+      </p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Image Url</label>
+    <input
+      name="image"
+      type="text"
+      class="form-control"
+      formControlName="imageUrl"
+    />
+    <div *ngIf="imageUrl.invalid && imageUrl.touched">
+      <p class="alert alert-danger" *ngIf="imageUrl.errors['required']">
+        Required field
+      </p>
+      <p
+        class="alert alert-danger"
+        *ngIf="
+          !imageUrl.errors['required'] && imageUrl.errors['wrongExtension']
+        "
+      >
+        Image extension must be a jpg, jpeg or png
+      </p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select
+      name="category"
+      id="category"
+      class="form-select"
+      formControlName="categoryId"
+    >
+      <option value="">Choose</option>
+      <option *ngFor="let category of categories" value="{{ category.id }}">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+  <button
+    [disabled]="movieForm.invalid"
+    class="btn btn-primary me-2"
+    type="submit"
+  >
+    Create
+  </button>
+  <button class="btn btn-warning" (click)="clearForm($event)">Clear</button>
+</form>
