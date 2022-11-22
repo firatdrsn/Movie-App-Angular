@@ -9,17 +9,11 @@ import { AuthService } from "./services/auth.service";
 @NgModule({
     declarations: [AuthComponent],
     imports: [
-        SharedModule,
         FormsModule,
         RouterModule.forChild([
             { path: '', component: AuthComponent },
-        ])
+        ]),
+        SharedModule,
     ],
-    exports: [AuthComponent],
-    providers: [
-        AuthGuard,
-        AuthService
-    ]
-
 })
 export class AuthModule { }

@@ -15,9 +15,7 @@ import { CategoryComponent } from "./category.component";
     imports: [
         SharedModule,
         ReactiveFormsModule,
-        RouterModule.forChild([
-            { path: 'category/create', component: CategoryCreateComponent, canActivate: [AuthGuard] },
-        ]),
+        RouterModule,
     ],
     exports: [
         CategoryComponent,
